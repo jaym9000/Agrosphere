@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {Agrosphere} from "../src/Agrosphere.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+contract AgroScript is Script {
+    Agrosphere public agrosphere;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        agrosphere = new Agrosphere(1000); // Assuming 1000 is the cap for demonstration
 
         vm.stopBroadcast();
     }
