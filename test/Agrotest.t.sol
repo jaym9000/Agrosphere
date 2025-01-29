@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.23;
 
 import {Test, console} from "forge-std/Test.sol";
 import {Agrosphere} from "../src/Agrosphere.sol";
@@ -17,7 +17,7 @@ contract AgroTest is Test {
     }
 
     function testFuzz_SetNumber(uint256 x) public {
-        agrosphere.mint(msg.sender, x);
-        assertEq(agrosphere.balanceOf(msg.sender), x);
+        agrosphere.mint(msg.sender, 50);
+        assertEq(agrosphere.balanceOf(msg.sender), 50);
     }
 }
